@@ -1,0 +1,230 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dynamic Customizer</title>
+        <link rel="shortcut icon" href="images/favicon.png"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <div id="hero">
+                <img src="images/logo.png">
+                <h1>Build your own Pizza</h1>
+                <hr>
+            </div>
+            <div id="customizer">
+                <div class="builder">
+                    <div class="options">
+                        <div class="buttons">
+                            <div class="selector">
+                                <h6>Crust:</h6>
+                            </div>
+                            <button class="crust_basic">
+                                Basic
+                            </button>
+                            <button class="crust_thin">
+                                Thin
+                            </button>
+                            <button class="crust_thick">
+                                Crispy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="buttons">
+                            <div class="selector">
+                                <h6>Sauce:</h6>
+                            </div>
+                            <button class="sauce_all">
+                                All
+                            </button>
+                            <button class="sauce_left">
+                                Left
+                            </button>
+                            <button class="sauce_right">
+                                Right
+                            </button>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="buttons">
+                            <div class="selector">
+                                <h6>Cheese:</h6>
+                            </div>
+                            <button class="Mozzerella">
+                                Mozzerella
+                            </button>
+                            <button class="Parmaesan">
+                                Parmaesan
+                            </button>
+                            <button class="Cheddar">
+                                Cheddar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="buttons">
+                            <div class="selector">
+                                <h6>Pepperoni:</h6>
+                            </div>
+                            <button class="pep_all">
+                                All
+                            </bytton>
+                            <button class="pep_left">
+                                Left
+                            </button>
+                            <button class="pep_right">
+                                Right
+                            </button>
+                        </div>
+                    </div>
+                    <div class="options">
+                        <div class="buttons">
+                            <div class="selector">
+                                <h6>Mushrooms:</h6>
+                            </div>
+                            <button class="mush_all">
+                                All
+                            </button>
+                            <button class="mush_left">
+                                Left
+                            </button>
+                            <button class="mush_right">
+                                Right
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <img id="crust_basic" src="images/crust_basic.png">
+                    <img id="crust_thick" src="images/crust_thick.png">
+                    <img id="crust_thin" src="images/crust_thin.png">
+
+                    <img id="sauce_all" src="images/pizza_sauce.png">
+                    <img id="sauce_left" src="images/pizza_sauce_left.png">
+                    <img id="sauce_right" src="images/pizza_sauce_right.png">
+
+                    <img id="mozzerella" src="images/cheese_mozerella.png">
+                    <img id="parmaesan" src="images/cheese_parm.png">
+                    <img id="cheddar" src="images/cheese_cheddar.png">
+
+                    <img id="pep_all" src="images/pepperoni_all.png">
+                    <img id="pep_left" src="images/pepperoni_left.png">
+                    <img id="pep_right" src="images/pepperoni_right.png">
+
+                    <img id="mush_all" src="images/mushrooms_all.png">
+                    <img id="mush_left" src="images/mushrooms_left.png">
+                    <img id="mush_right" src="images/mushrooms_right.png">
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                  $("#crust_thick").hide();
+                  $("#crust_thin").hide();
+                  $("#sauce_all").hide();
+                  $("#sauce_left").hide();
+                  $("#sauce_right").hide();
+                  $("#mozzerella").hide();
+                  $("#parmaesan").hide();
+                  $("#cheddar").hide();
+                  $("#pep_all").hide();
+                  $("#pep_left").hide();
+                  $("#pep_right").hide();
+                  $("#mush_all").hide();
+                  $("#mush_left").hide();
+                  $("#mush_right").hide();
+
+                  $(".crust_thin").click(function(){
+                      $("#crust_thin").show();
+                      $("#crust_basic").hide();
+                      $("#crust_thick").hide()
+                  });
+                  $(".crust_basic").click(function(){
+                      $("#crust_thin").hide();
+                      $("#crust_basic").show();
+                      $("#crust_thick").hide()
+                  });
+                  $(".crust_thick").click(function(){
+                      $("#crust_thin").hide();
+                      $("#crust_basic").hide();
+                      $("#crust_thick").show();
+                  });
+
+                  $(".sauce_all").click(function(){
+                      $("#sauce_all").show();
+                      $("#sauce_left").hide();
+                      $("#sauce_right").hide();
+                  });
+                  $(".sauce_left").click(function(){
+                      $("#sauce_all").hide();
+                      $("#sauce_left").show();
+                      $("#sauce_right").hide();
+                  });
+                  $(".sauce_right").click(function(){
+                      $("#sauce_all").hide();
+                      $("#sauce_left").hide();
+                      $("#sauce_right").show();
+                  });
+
+                  $(".Mozzerella").click(function(){
+                      $("#mozzerella").show();
+                      $("#parmaesan").hide();
+                      $("#cheddar").hide();
+                  });
+                  $(".Parmaesan").click(function(){
+                      $("#mozzerella").hide();
+                      $("#parmaesan").show();
+                      $("#cheddar").hide();
+                  });
+                  $(".Cheddar").click(function(){
+                      $("#mozzerella").hide();
+                      $("#parmaesan").hide();
+                      $("#cheddar").show();
+                  });
+
+                  $(".pep_all").click(function(){
+                      $("#pep_all").show();
+                      $("#pep_left").hide();
+                      $("#pep_right").hide();
+                  });
+                  $(".pep_left").click(function(){
+                      $("#pep_all").hide();
+                      $("#pep_left").show();
+                      $("#pep_right").hide();
+                  });
+                  $(".pep_right").click(function(){
+                      $("#pep_all").hide();
+                      $("#pep_left").hide();
+                      $("#pep_right").show();
+                  });
+
+                  $(".mush_all").click(function(){
+                      $("#mush_all").show();
+                      $("#mush_left").hide();
+                      $("#mush_right").hide();
+                  });
+                  $(".mush_left").click(function(){
+                      $("#mush_all").hide();
+                      $("#mush_left").show();
+                      $("#mush_right").hide();
+                  });
+                  $(".mush_right").click(function(){
+                      $("#mush_all").hide();
+                      $("#mush_left").hide();
+                      $("#mush_right").show();
+                  });
+            });
+        </script>
+    </body>
+
+</html>
